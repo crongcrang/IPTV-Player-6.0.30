@@ -4,6 +4,7 @@
 npm install <br>
 npm start<br> สำหรับทดสอบ
 npm run build<br> สร้างตัวติดตั้ง<br>
+<img src="https://raw.githubusercontent.com/crongcrang/IPTV-Player-6.0.30/refs/heads/main/screenshot.png">
 
 
 
