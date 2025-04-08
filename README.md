@@ -3,7 +3,8 @@
 ตรวจสอบว่า node และ npm ติดตั้งเรียบร้อย:<br>node -v<br>
 npm install <br>
 npm start<br> สำหรับทดสอบ
-npm run build<br> สร้างตัวติดตั้ง
+npm run build<br> สร้างตัวติดตั้ง<br>
+
 
 
 
