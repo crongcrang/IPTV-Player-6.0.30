@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คุณสมบัติของ IPTV Player</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #1e88e5;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #ff7043;
+            border-bottom: 2px solid #1e88e5;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #1e88e5;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>คุณสมบัติของ IPTV Player</h1>
+	<div class="version">เวอร์ชัน: <span id="app-version"></span></div>
+   <div class="developer">ผู้พัฒนา: Son Tong</div>
+
+    <div class="section">
+        <h2>1. การจัดการช่องรายการ (Channel Management)</h2>
+        <ul>
+            <li><span class="highlight">นำเข้าและส่งออกช่อง:</span> รองรับการนำเข้าช่องจากไฟล์ .js, .m3u, .w3u, และ .json ผ่านเมนูหรือ URL และส่งออกเป็น .js หรือ .m3u รวมถึงข้อมูล DRM</li>
+            <li><span class="highlight">จัดกลุ่มช่อง:</span> แสดงช่องตามกลุ่ม เช่น "รายการโปรด" และเลือกดูได้จากรายการด้านซ้าย</li>
+            <li><span class="highlight">แก้ไขช่อง:</span> เปลี่ยนชื่อช่องและกลุ่มผ่านโหมดแก้ไข รวมถึงอัปโหลดโลโก้จากไฟล์หรือ URL</li>
+            <li><span class="highlight">เรียงลำดับช่อง:</span> เรียงจาก A-Z, Z-A หรือกลับสู่ลำดับเริ่มต้น และรองรับการลากและวางเพื่อจัดเรียง</li>
+            <li><span class="highlight">ค้นหาช่อง:</span> มีแถบค้นหาเพื่อกรองช่องตามชื่อ</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. การเล่นสื่อ (Media Playback)</h2>
+        <ul>
+            <li><span class="highlight">รองรับสื่อหลากหลายรูปแบบ:</span>
+                <ul>
+                    <li>IPTV Streams: รองรับ .m3u8 และ .mpd พร้อมจัดการ DRM (เช่น ClearKey)</li>
+                    <li>YouTube: เล่นวิดีโอจาก URL ผ่าน iframe embed</li>
+                    <li>ไฟล์ในเครื่อง: รองรับ .mp4, .mkv, .avi, .mov, .flv</li>
+                    <li>สตรีม URL: กรอก URL สตรีมเพื่อเล่นโดยตรง</li>
+                </ul>
+            </li>
+            <li><span class="highlight">เครื่องเล่น JW Player:</span> ใช้ JW Player แสดงเมทาดาทา เช่น ชื่อ, Bitrate, Codec และระยะเวลา</li>
+            <li><span class="highlight">การควบคุมการเล่น:</span> ปุ่มหยุด/เล่น, เปลี่ยนช่อง, เพิ่มช่องโปรด, ลบช่อง, จับภาพหน้าจอ, ดาวน์โหลดวิดีโอ และควบคุมด้วยแป้นพิมพ์</li>
+            <li><span class="highlight">โหมดเต็มหน้าจอ:</span> ปรับขนาดเครื่องเล่นให้เต็มหน้าจอเมื่อขยายหน้าต่าง</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. การจัดการ Proxy</h2>
+        <ul>
+            <li><span class="highlight">Proxy Server ในตัว:</span> สร้าง HTTP Proxy ในเครื่องเพื่อจัดการสตรีม .m3u8</li>
+            <li><span class="highlight">การรีเฟรช URL:</span> รีเฟรช URL สตรีมเมื่อ token เปลี่ยนหรือหมดอายุ</li>
+            <li><span class="highlight">หยุด/เริ่ม Proxy:</span> หยุด Proxy เมื่อปิดเครื่องเล่นและเริ่มใหม่เมื่อเล่นช่องใหม่</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. การดาวน์โหลดวิดีโอ</h2>
+        <ul>
+            <li><span class="highlight">ดาวน์โหลดสตรีม .m3u8:</span> ใช้ FFmpeg ดาวน์โหลดเป็น .mp4 กำหนดระยะเวลาได้ พร้อมแสดงสถานะแบบเรียลไทม์</li>
+            <li><span class="highlight">ดาวน์โหลดวิดีโอ YouTube:</span> ใช้ yt-dlp เลือกคุณภาพ (เช่น 720p, 1080p) และบันทึกเป็น .mp4</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>5. การจัดการช่องโปรด (Favorites)</h2>
+        <ul>
+            <li><span class="highlight">เพิ่ม/ลบช่องโปรด:</span> เพิ่มช่องจากปุ่ม "F" บนเครื่องเล่น</li>
+            <li><span class="highlight">นำเข้า/ส่งออกช่องโปรด:</span> บันทึกและโหลดช่องโปรดในรูปแบบ .json</li>
+            <li><span class="highlight">แสดงช่องโปรด:</span> มีกลุ่ม "รายการโปรด" แยกในรายการกลุ่ม</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>6. อินเทอร์เฟซผู้ใช้ (User Interface)</h2>
+        <ul>
+            <li><span class="highlight">มุมมองสองแบบ:</span> Grid View (ตารางพร้อมรูปภาพ) และ List View (รายการแนวนอน)</li>
+            <li><span class="highlight">การปรับแต่งธีมและภาษา:</span> รองรับภาษาไทย/อังกฤษ และธีมมืด</li>
+            <li><span class="highlight">แถบเลื่อนข่าว:</span> แสดงข่าวสั้นจาก RSS Feed ที่ท้ายหน้าต่าง</li>
+            <li><span class="highlight">การจับภาพหน้าจอ:</span> จับภาพวิดีโอและบันทึกเป็น .png</li>
+            <li><span class="highlight">Tooltip:</span> แสดงคำอธิบายปุ่มเมื่อวางเมาส์ทับ</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>7. การอัปเดตและการสนับสนุน</h2>
+        <ul>
+            <li><span class="highlight">ตรวจสอบการอัปเดต:</span> ตรวจสอบและดาวน์โหลดอัปเดตจากเซิร์ฟเวอร์</li>
+            <li><span class="highlight">หน้าต่างเกี่ยวกับ:</span> แสดงข้อมูลเวอร์ชันและผู้พัฒนา (Son Tong)</li>
+            <li><span class="highlight">การบริจาค:</span> เชิญชวนบริจาคผ่าน PayPal ในหน้า Welcome</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>8. การจัดการไฟล์นำเข้า (Imported Files)</h2>
+        <ul>
+            <li><span class="highlight">แสดงรายการไฟล์นำเข้า:</span> ดูและเลือกไฟล์ช่องที่เคยนำเข้า</li>
+            <li><span class="highlight">ลบไฟล์นำเข้า:</span> ลบไฟล์และกลับไปใช้ไฟล์เริ่มต้น</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>9. คุณสมบัติเพิ่มเติม</h2>
+        <ul>
+			 <li><span class="highlight">Xtream code:</span> เพิ่่มระบบ Xtream Code</li>
+            <li><span class="highlight">การโหลดโฟลเดอร์:</span> เลือกโฟลเดอร์ที่มีไฟล์มีเดียเพื่อเล่น</li>
+            <li><span class="highlight">การจัดการข้อผิดพลาด:</span> แสดงข้อความเมื่อโหลดสตรีมหรือไฟล์ล้มเหลว</li>
+            <li><span class="highlight">บันทึกการตั้งค่า:</span> ใช้ electron-store เก็บข้อมูล เช่น ช่องโปรด, ภาษา, และโหมดมุมมอง</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>10. การเพิ่มประสิทธิภาพและความปลอดภัย</h2>
+        <ul>
+            <li><span class="highlight">Caching:</span> ใช้ NodeCache เก็บข้อมูลชั่วคราว ลดการโหลดซ้ำ</li>
+            <li><span class="highlight">การล็อกไฟล์:</span> ใช้ proper-lockfile ป้องกันการเขียนไฟล์พร้อมกัน</li>
+            <li><span class="highlight">ปิดการใช้งาน Hardware Acceleration:</span> ป้องกันปัญหาความเข้ากันได้</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <p><strong>สรุป:</strong> IPTV Player เป็นเครื่องมือครบครันสำหรับการรับชมและจัดการสื่อสตรีมมิ่ง เน้นการใช้งานง่าย รองรับหลายแหล่งสื่อ และมีฟีเจอร์ขั้นสูง เช่น การดาวน์โหลด, การจัดการ Proxy, และการแก้ไขช่อง เหมาะสำหรับผู้ใช้ที่ต้องการประสบการณ์ IPTV แบบส่วนตัวและปรับแต่งได้</p>
+    </div>
+	    <button onclick="window.close()">ปิด</button>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+    ipcRenderer.invoke('get-app-version').then((version) => {
+      document.getElementById('app-version').textContent = version;
+    });
+  </script>
+	
+</body>
+</html>

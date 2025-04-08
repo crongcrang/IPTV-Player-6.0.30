@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloading...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #333;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #1e88e5;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+        #progress-text {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        #error-message {
+            color: #ff7043;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>Downloading Update</h3>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div id="progress-text">0% (0 MB / Unknown MB)</div>
+    <div id="error-message"></div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        ipcRenderer.on('download-progress', (event, data) => {
+            const { percentage, loaded, total } = data;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-text').textContent = `${percentage}% (${loaded} MB / ${total} MB)`;
+        });
+
+        ipcRenderer.on('download-error', (event, errorMessage) => {
+            document.getElementById('error-message').textContent = `Error: ${errorMessage}`;
+            document.getElementById('error-message').style.display = 'block';
+            document.getElementById('progress-bar').style.backgroundColor = '#ff7043'; // เปลี่ยนสีเป็นแดงเมื่อมีข้อผิดพลาด
+        });
+    </script>
+</body>
+</html>

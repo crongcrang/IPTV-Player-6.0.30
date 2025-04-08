@@ -1,0 +1,35 @@
+**IPTV Player License Agreement**  
+**Version 6.0.30**  
+**Last Updated: April 7, 2025**  
+
+**Developed by: Son Tong**  
+
+
+Software License Agreement for IPTV Player  
+
+1. **Definitions**  
+   IPTV Player ("Software") is a program developed by Son Tong for viewing IPTV channels, intended for personal use only.  
+
+2. **License Grant**  
+   - The developer grants you a free license to use this Software strictly for personal use.  
+   - Commercial distribution, resale, or sharing of this Software is strictly prohibited.  
+   - Modification, alteration, or reverse engineering of the Software's source code without explicit permission from the developer is prohibited.  
+
+3. **Restrictions**  
+   - The Software is provided "as-is" without any warranties of any kind.  
+   - The developer shall not be liable for any damages arising from the use of this Software, including but not limited to data loss or system disruptions.  
+
+4. **Copyright**  
+   - The copyright of this Software belongs exclusively to Son Tong.  
+   - Unauthorized reproduction or distribution is considered copyright infringement and may result in legal action.  
+
+5. **Updates and Support**  
+   - The developer may provide updates or support at their discretion.  
+   - There is no obligation to offer future updates or support.  
+
+6. **Acceptance of Agreement**  
+   - By installing or using this Software, you agree to all the terms outlined in this agreement.  
+
+For any questions or concerns regarding this agreement, please contact the developer.  
+
+© 2025 Son Tong. All rights reserved.
