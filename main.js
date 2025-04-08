@@ -85,7 +85,7 @@ let restartTimeout;
 let aboutWindow = null;
 
 const CURRENT_VERSION = app.getVersion();
-const UPDATE_CHECK_URL = "https://www.raspihost.com/update.json";
+const UPDATE_CHECK_URL = "https://www.yourserver.com/update.json";
 const CACHE_DURATION = 10 * 60 * 1000;
 
 function log(message, level = "info") {
