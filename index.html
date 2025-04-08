@@ -2834,7 +2834,7 @@ async function fetchNews() {
             return;
         }
         try {
-            const response = await fetch("https://www.raspihost.com/news.txt", {
+            const response = await fetch("https://www.yourserver.com/news.txt", {
                 cache: "no-store" // ป้องกันการแคช เพื่อให้ได้ข้อมูลล่าสุดเสมอ
             });
             const newsText = await response.text();
